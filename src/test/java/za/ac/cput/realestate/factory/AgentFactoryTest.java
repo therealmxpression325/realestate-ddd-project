@@ -1,3 +1,9 @@
+/* AgentFactoryTest.java
+   Test class for AgentFactory
+   Author: Sinoxolo Kobeni (230801846)
+   Date: 20 March 2026
+*/
+
 package za.ac.cput.realestate.factory;
 
 import org.junit.jupiter.api.Test;

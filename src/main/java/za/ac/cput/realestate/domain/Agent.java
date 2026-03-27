@@ -1,3 +1,8 @@
+/* Agent.java
+   Agent model class using Builder Pattern
+   Author: Sinoxolo Kobeni (230801846)
+   Date: 20 March 2026
+*/
 
 package za.ac.cput.realestate.domain;
 
