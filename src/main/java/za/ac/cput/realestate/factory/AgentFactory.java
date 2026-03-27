@@ -1,8 +1,7 @@
 package za.ac.cput.realestate.factory;
-/* Agent.java
-   Agent model class using Builder Pattern
+/* AgentFactory.java
    Author: Sinoxolo Kobeni (230801846)
-   Date: 24 March 2026
+   Date: 20 March 2026
 */
 import za.ac.cput.realestate.domain.Agent;
 import za.ac.cput.realestate.util.Helper;
