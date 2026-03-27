@@ -1,3 +1,8 @@
+/* AgentRepositoryTest.java
+   Test class for AgentRepository
+   Author: Sinoxolo Kobeni (230801846)
+   Date: 24 March 2026
+*/
 
 package za.ac.cput.realestate.repository;
 
@@ -23,11 +28,11 @@ class AgentRepositoryTest {
         repository.clear();  // make sure you have a clear() method for testing
         agent1 = AgentFactory.createAgent(
                 "A001", "John", "Doe",
-                "1234567890", "john@example.com", "LIC123", 0.05
+                "1234567890", "john@doe.com", "LIC123", 0.05
         );
         agent2 = AgentFactory.createAgent(
                 "A002", "Jane", "Smith",
-                "0987654321", "jane@example.com", "LIC456", 0.07
+                "0987654321", "jane@doe.com", "LIC456", 0.07
         );
     }
 
@@ -131,7 +136,7 @@ class AgentRepositoryTest {
     void getAgentByEmail_ReturnsCorrect() {
         repository.create(agent1);
         repository.create(agent2);
-        Agent found = repository.getAgentByEmail("john@example.com");
+        Agent found = repository.getAgentByEmail("john@doe.com");
         assertEquals(agent1, found);
     }
 }
