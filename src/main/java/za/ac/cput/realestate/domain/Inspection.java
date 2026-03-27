@@ -16,7 +16,9 @@ public class Inspection {
     private String status;
     private double cost;
 
-    private Inspection(Builder builder) {
+    //missing contsructor
+
+    private Inspection(Builder builder){
         this.inspectionId = builder.inspectionId;
         this.propertyId = builder.propertyId;
         this.inspectorName = builder.inspectorName;
@@ -24,15 +26,36 @@ public class Inspection {
         this.report = builder.report;
         this.status = builder.status;
         this.cost = builder.cost;
+
     }
 
-    public String getInspectionId() { return inspectionId; }
-    public String getPropertyId() { return propertyId; }
-    public String getInspectorName() { return inspectorName; }
-    public LocalDateTime getInspectionDate() { return inspectionDate; }
-    public String getReport() { return report; }
-    public String getStatus() { return status; }
-    public double getCost() { return cost; }
+    public String getInspectionId() {
+        return inspectionId;
+    }
+
+    public String getPropertyId() {
+        return propertyId;
+    }
+
+    public String getInspectorName() {
+        return inspectorName;
+    }
+
+    public LocalDateTime getInspectionDate() {
+        return inspectionDate;
+    }
+
+    public String getReport() {
+        return report;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public double getCost() {
+        return cost;
+    }
 
     @Override
     public String toString() {
@@ -47,7 +70,7 @@ public class Inspection {
                 '}';
     }
 
-    public static class Builder {
+    public static class Builder{
         private String inspectionId;
         private String propertyId;
         private String inspectorName;
@@ -60,27 +83,22 @@ public class Inspection {
             this.inspectionId = inspectionId;
             return this;
         }
-
         public Builder setPropertyId(String propertyId) {
             this.propertyId = propertyId;
             return this;
         }
-
         public Builder setInspectorName(String inspectorName) {
             this.inspectorName = inspectorName;
             return this;
         }
-
         public Builder setInspectionDate(LocalDateTime inspectionDate) {
             this.inspectionDate = inspectionDate;
             return this;
         }
-
         public Builder setReport(String report) {
             this.report = report;
             return this;
         }
-
         public Builder setStatus(String status) {
             this.status = status;
             return this;
@@ -90,8 +108,7 @@ public class Inspection {
             this.cost = cost;
             return this;
         }
-
-        public Builder copy(Inspection inspection) {
+        public Builder copy(Inspection inspection){
             this.inspectionId = inspection.inspectionId;
             this.propertyId = inspection.propertyId;
             this.inspectorName = inspection.inspectorName;
@@ -102,8 +119,6 @@ public class Inspection {
             return this;
         }
 
-        public Inspection build() {
-            return new Inspection(this);
-        }
+        public Inspection build(){return new Inspection(this);}
     }
 }

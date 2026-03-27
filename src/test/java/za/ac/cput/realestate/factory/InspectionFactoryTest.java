@@ -1,7 +1,7 @@
 /* InspectionFactoryTest.java
    Test class for InspectionFactory
    Author: Paul Khumalo (230108547)
-   Date: 16 March 2026
+   Date: 15 March 2026
 */
 package za.ac.cput.realestate.factory;
 
@@ -17,7 +17,7 @@ class InspectionFactoryTest {
     @Test
     void createInspection_Success() {
         LocalDateTime futureDate = LocalDateTime.now().plusDays(3);
-        Inspection inspection = za.ac.cput.realestate.factory.InspectionFactory.createInspection(
+        Inspection inspection = InspectionFactory.createInspection(
                 "I001", "P001", "Bob Inspector", futureDate,
                 "All good", "Completed", 500.00
         );
@@ -35,7 +35,7 @@ class InspectionFactoryTest {
     @Test
     void createInspection_Simple() {
         LocalDateTime futureDate = LocalDateTime.now().plusDays(5);
-        Inspection inspection = za.ac.cput.realestate.factory.InspectionFactory.createInspection(
+        Inspection inspection = InspectionFactory.createInspection(
                 "P001", "Bob Inspector", futureDate, 500.00
         );
 
@@ -51,7 +51,7 @@ class InspectionFactoryTest {
     @Test
     void createInspection_PastDate_ReturnsNull() {
         LocalDateTime pastDate = LocalDateTime.now().minusDays(1);
-        Inspection inspection = za.ac.cput.realestate.factory.InspectionFactory.createInspection(
+        Inspection inspection = InspectionFactory.createInspection(
                 "I001", "P001", "Bob Inspector", pastDate,
                 "", "Scheduled", 500.00
         );
@@ -61,7 +61,7 @@ class InspectionFactoryTest {
     @Test
     void createInspection_NegativeCost_ReturnsNull() {
         LocalDateTime futureDate = LocalDateTime.now().plusDays(3);
-        Inspection inspection = za.ac.cput.realestate.factory.InspectionFactory.createInspection(
+        Inspection inspection = InspectionFactory.createInspection(
                 "I001", "P001", "Bob Inspector", futureDate,
                 "", "Scheduled", -100.00
         );
@@ -71,7 +71,7 @@ class InspectionFactoryTest {
     @Test
     void createInspection_NullPropertyId_ReturnsNull() {
         LocalDateTime futureDate = LocalDateTime.now().plusDays(3);
-        Inspection inspection = za.ac.cput.realestate.factory.InspectionFactory.createInspection(
+        Inspection inspection = InspectionFactory.createInspection(
                 "I001", null, "Bob Inspector", futureDate,
                 "", "Scheduled", 500.00
         );

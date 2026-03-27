@@ -14,7 +14,7 @@ public class InspectionFactory {
 
     public static Inspection createInspection(String inspectionId, String propertyId,
                                               String inspectorName, LocalDateTime inspectionDate,
-                                              String report, String status, double cost) {
+                                              String report, String status, double cost){
 
         if (Helper.isNullOrEmpty(inspectionId) ||
                 Helper.isNullOrEmpty(propertyId) ||
@@ -25,20 +25,20 @@ public class InspectionFactory {
                 !Helper.isPositive(cost)) {
             return null;
         }
-
         return new Inspection.Builder()
-                .setInspectionId(inspectionId)
-                .setPropertyId(propertyId)
-                .setInspectorName(inspectorName)
-                .setInspectionDate(inspectionDate)
-                .setReport(report)
-                .setStatus(status)
-                .setCost(cost)
-                .build();
+            .setInspectionId(inspectionId)
+            .setPropertyId(propertyId)
+            .setInspectorName(inspectorName)
+            .setInspectionDate(inspectionDate)
+            .setReport(report)
+            .setStatus(status)
+            .setCost(cost)
+            .build();
+
     }
 
     public static Inspection createInspection(String propertyId, String inspectorName,
-                                              LocalDateTime inspectionDate, double cost) {
+                                              LocalDateTime inspectionDate, double cost){
 
         if (Helper.isNullOrEmpty(propertyId) ||
                 Helper.isNullOrEmpty(inspectorName) ||
@@ -47,7 +47,6 @@ public class InspectionFactory {
                 !Helper.isPositive(cost)) {
             return null;
         }
-
         String inspectionId = Helper.generateId();
         String status = "Scheduled";
         String report = "";
@@ -62,4 +61,5 @@ public class InspectionFactory {
                 .setCost(cost)
                 .build();
     }
+
 }
